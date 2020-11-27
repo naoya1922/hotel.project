@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:./h2db/sampledb;
+    driverClassName: org.h2.Driver
+    username: username
+    password:
+  jpa.hibernate.ddl-auto: update
+  h2.console.enabled: true
+  mvc.hiddenmethod.filter.enabled: true
+  cloudinary:
+    cloud_name: collage-student
+    api_key: 271431774824538
+    api_secret: WtviDiXq07WnUGBFFA7c78Ai-uA

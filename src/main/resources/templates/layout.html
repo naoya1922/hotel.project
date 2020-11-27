@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+xmlns       = "http://www.w3.org/1999/xhtml"
+xmlns:th    = "http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title th:text="${title}">Insert title here</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+    <body>
+        <header class="navbar navbar-expand-md align-items-center w-100 navbar-light border-bottom mb-3">
+            <div class="container">
+                <a href="/" class="navbar-brand mr-auto font-italic"><span class="h1 m-0">Hotel Project</h1></a>
+                <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto mr-sm-2">
+                        <li class="nav-item"><a href="http://localhost:8080/hotels" class="badge badge-success">トップページ</a></li>
+                        <li class="nav-item"><a href="http://localhost:8080/contacts/new" class="badge badge-info">お問い合わせ</a></li>
+                    </ul>
+                    <form class="form-inline" action="/hotels">
+                        <input class="form-control mr-sm-2" type="text" name="name" placeholder="ホテル名">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        
+
+        <div class="container">
+            <div layout:fragment="contents">
+                <p>Default layout content</p>
+            </div>
+        </div>
+
+        <div style="height: 2000px;"></div>
+        
+        <div id="page-top"><button type="button" class="btn btn-secondary p-3">Page Top</button></div>
+        <footer class="mt-5 bg-light">
+            <div class="d-flex justify-content-around p-3">
+                <a href=""><img th:src="@{/images/f_logo_RGB-Blue_58.png}" width="30" height="30" alt="facebookアイコン"></a>
+                <a href=""><img th:src="@{/images/Instagram_AppIcon_Aug2017.png}" width="30" height="30" alt="instagramアイコン"></a>
+                <a href=""><img th:src="@{/images/Twitter_Social_Icon_Rounded_Square_Color.png}" width="30" height="30" alt="twitterアイコン"></a>
+            </div>
+            <p class="text-center text-muted display-5">Hotel Project</p>
+          </footer>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+          <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+          <script th:src="@{/js/main.js}"></script>
+    </body>
+</html>

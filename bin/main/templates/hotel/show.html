@@ -1,0 +1,38 @@
+<div layout:decorate="layout">
+  <div layout:fragment="contents">
+    <h1 text="title">ホテル詳細</h1>
+    <div th:object="${hotel}">
+      <div class="card" style="width: 18rem;">
+        <img th:src="*{getThumbnailUrl()}" class="card-img-top" alt="ホテルの写真">
+        <div class="card-body">
+          <h5 class="card-title"><p th:text="*{name}"></p></h5>
+          <p class="card-text"><p th:text="*{description}"></p>
+        </div>
+        <div class="card-body">
+          <a th:href="@{/hotels/{id}/reviews/new(id=*{id})}" class="card-link">新規レビュー</a>
+          <a th:href="@{/hotels/{id}/reservations/new(id=*{id})}" class="card-link">新規予約</a>
+        </div>
+      </div>
+      
+    </div>
+
+     
+        
+        <div class="row">
+          <div class="col-md-3" th:each="review:${reviews}" th:object="${review}">
+            <div class="card border-light" >
+              <div class="card-header bg-info">ユーザーネーム<h4 th:text="*{name}"></h4><h5 th:text="*{createdAt}"></h5></div>
+              <div class="card-body">
+               <h6 class="card-id">id<p th:text="*{id}"></p></h6>
+               <h5 class="evaluation">評価 (5.0 満点）<p th:text="*{evaluation}"></p></h5>
+               <h5 class="card-title">タイトル<p th:text="*{title}"></p></h5>
+               <p class="card-text">本文<p th:text="*{body}"></p>
+               <a th:href="@{/hotels/{hotel_id}/reviews/{id}(hotel_id=*{hotel.id},id=*{id})}" class="btn btn-success">参照する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+   
+    </div>
+</div>

@@ -1,0 +1,17 @@
+#page-top {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+  }
+  /*左右の矢印の色を変える*/
+ .slick-prev:before,
+ .slick-next:before {
+   color: black;
+ }
+ /*　横並び+均等に配置*/
+ .card border-light mb-3{
+       display:flex;
+       justify-content:space-between;
+
+ }
+ 

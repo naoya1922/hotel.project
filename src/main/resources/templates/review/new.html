@@ -1,0 +1,39 @@
+<div layout:decorate="layout">
+  <div layout:fragment="contents">
+    <h1 text="title" font size="6">新規レビュー</h1>
+    <form th:action="@{/hotels/{hotel_id}/reviews/(hotel_id=*{hotel.id})}" th:method="post">
+      <div class="form-group">
+        <label class="control-label">名前</label>
+        <input class="form-control" type="text" name="name" />
+      </div>
+      <div class="form-group">
+        <label class="control-label">評価(五点満点）</label>
+        <select class="form-control" name="evaluation">
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+          <option value="3.5">3.5</option>
+          <option value="4">4</option>
+          <option value="4.5">4.5</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label">タイトル</label>
+        <input class="form-control" type="text" name="title" />
+      </div>
+      <div class="form-group">
+        <label class="control-label">本文</label>
+        <textarea class="form-control" type="text" rows="7" name="body"></textarea>
+      </div>
+      <input class="form-control" type="hidden" name="hotelId" th:value="${hotel.id}" />
+      <button class="btn btn-secondary" type="submit">作成</button>
+    </form>
+    <div class="pull-right">
+      <a class="btn btn-link"th:href="@{/hotels/{hotel_id}/(hotel_id=*{hotel.id})}">一覧画面へ</a>
+    </div>
+  </div>
+</div>
